@@ -3,7 +3,7 @@ import processing.core.PApplet;
 public class balls extends PApplet {
     public static int WIDTH=640;
     public static int HEIGHT=200;
-    public static int DIAMETER=10;
+   
     int x=0,y=0,z=0,w=0;
     public static void main(String[] args) {
         PApplet.main("balls",args);
@@ -27,23 +27,23 @@ public class balls extends PApplet {
     }
     class DrawCircleWith1Unit {
         private void DrawCircleWith1UnitFrame() {
-            ellipse(w, HEIGHT / 5, DIAMETER, DIAMETER);
-            w++;
+            ellipse(w++, HEIGHT / 5, 10,10);
+            
         }
 
         private void DrawCircleWith2UnitFrame() {
-            ellipse(x, 2 * HEIGHT / 5, DIAMETER, DIAMETER);
-            x = x + 2;
+            ellipse(x = x + 2, 2 * HEIGHT / 5, 10,10);
+            
         }
 
         private void DrawCircleWith4UnitFrame() {
-            ellipse(y, 4 * HEIGHT / 5, DIAMETER, DIAMETER);
-            y = y + 4;
+            ellipse(y = y + 4, 4 * HEIGHT / 5, 10,10);
+            
         }
 
         private void DrawCircleWith3UnitFrame() {
-            ellipse(z, 3 * HEIGHT / 5, DIAMETER, DIAMETER);
-            z = z + 3;
+            ellipse(z = z + 3, 3 * HEIGHT / 5, 10,10);
+            
         }
     }
 }
