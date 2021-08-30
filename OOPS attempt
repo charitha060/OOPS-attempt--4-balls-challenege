@@ -1,65 +1,50 @@
 import processing.core.PApplet;
 
-public class Ball extends PApplet {
-
-    public static int WIDTH = 640;
-    public static int HEIGHT = 200;
-    public static int DIAMETER = 10;
-
+public class balls extends PApplet {
+    public static int WIDTH=640;
+    public static int HEIGHT=200;
+    public static int DIAMETER=10;
+    int x=0,y=0,z=0,w=0;
     public static void main(String[] args) {
-        PApplet.main("Ball", args);
+        PApplet.main("balls",args);
     }
 
     @Override
     public void settings() {
         super.settings();
-        
-        size(WIDTH, HEIGHT);
+        size(WIDTH,HEIGHT);
     }
 
     DrawCircleWith1Unit D1 = new DrawCircleWith1Unit();
-   
 
+
+    @Override
     public void draw() {
         D1.DrawCircleWith1UnitFrame();
         D1.DrawCircleWith2UnitFrame();
         D1.DrawCircleWith3UnitFrame();
         D1.DrawCircleWith4UnitFrame();
     }
-}
-import processing.core.PApplet;
+    class DrawCircleWith1Unit {
+        private void DrawCircleWith1UnitFrame() {
+            ellipse(w, HEIGHT / 5, DIAMETER, DIAMETER);
+            w++;
+        }
 
-class DrawCircleWith1Unit extends Ball{
-    int w=0;
-     void DrawCircleWith1UnitFrame()
-    {
-        ellipse(w, (float) (HEIGHT/5),DIAMETER,DIAMETER);
-        w++;
-    }
-    void DrawCircleWith2UnitFrame()
-    {
-        int x=0;
-        ellipse(x, (float) (HEIGHT/5),DIAMETER,DIAMETER);
-        x++;
-    }
-    void DrawCircleWith3UnitFrame()
-    {
-        int y=0;
-        ellipse(y, (float) (HEIGHT/5),DIAMETER,DIAMETER);
-        y++;
-    }
-    void DrawCircleWith4UnitFrame()
-    {
-        int z=0;
-        ellipse(z, (float) (HEIGHT/5),DIAMETER,DIAMETER);
-        z++;
+        private void DrawCircleWith2UnitFrame() {
+            ellipse(x, 2 * HEIGHT / 5, DIAMETER, DIAMETER);
+            x = x + 2;
+        }
+
+        private void DrawCircleWith4UnitFrame() {
+            ellipse(y, 4 * HEIGHT / 5, DIAMETER, DIAMETER);
+            y = y + 4;
+        }
+
+        private void DrawCircleWith3UnitFrame() {
+            ellipse(z, 3 * HEIGHT / 5, DIAMETER, DIAMETER);
+            z = z + 3;
+        }
     }
 }
-
-
-
-
-
-
-
 
