@@ -1,0 +1,65 @@
+import processing.core.PApplet;
+
+public class Ball extends PApplet {
+
+    public static int WIDTH = 640;
+    public static int HEIGHT = 200;
+    public static int DIAMETER = 10;
+
+    public static void main(String[] args) {
+        PApplet.main("Ball", args);
+    }
+
+    @Override
+    public void settings() {
+        super.settings();
+        
+        size(WIDTH, HEIGHT);
+    }
+
+    DrawCircleWith1Unit D1 = new DrawCircleWith1Unit();
+   
+
+    public void draw() {
+        D1.DrawCircleWith1UnitFrame();
+        D1.DrawCircleWith2UnitFrame();
+        D1.DrawCircleWith3UnitFrame();
+        D1.DrawCircleWith4UnitFrame();
+    }
+}
+import processing.core.PApplet;
+
+class DrawCircleWith1Unit extends Ball{
+    int w=0;
+     void DrawCircleWith1UnitFrame()
+    {
+        ellipse(w, (float) (HEIGHT/5),DIAMETER,DIAMETER);
+        w++;
+    }
+    void DrawCircleWith2UnitFrame()
+    {
+        int x=0;
+        ellipse(x, (float) (HEIGHT/5),DIAMETER,DIAMETER);
+        x++;
+    }
+    void DrawCircleWith3UnitFrame()
+    {
+        int y=0;
+        ellipse(y, (float) (HEIGHT/5),DIAMETER,DIAMETER);
+        y++;
+    }
+    void DrawCircleWith4UnitFrame()
+    {
+        int z=0;
+        ellipse(z, (float) (HEIGHT/5),DIAMETER,DIAMETER);
+        z++;
+    }
+}
+
+
+
+
+
+
+
+
